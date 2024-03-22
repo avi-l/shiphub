@@ -137,11 +137,11 @@ export const userOptions = [
     action: () => {},
   },
   {
-    label: 'email',
+    label: 'Email',
     action: () => {},
   },
   {
-    label: 'phone',
+    label: 'Phone',
     action: () => {},
   },
 ];
@@ -162,3 +162,37 @@ export const selectMPOptions = [
     action: () => {},
   },
 ];
+
+export const mpTableData = {
+  headings: [
+    'STATUS/ORDER#',
+    'DATE/TIME',
+    'SERVICE/TRACKING/QUOTE',
+    'FROM ADDRESS',
+    'TO ADDRESS',
+  ],
+  rowNames: ['status', 'dateTime', 'service', 'fromAddress', 'toAddress'],
+  data: [
+    {
+      status: 'Shipped',
+      dateTime: '2024-03-25 10:00 AM',
+      service: 'Express',
+      fromAddress: '123 Main St, Anytown, USA',
+      toAddress: '456 Oak St, Othertown, USA',
+    },
+    {
+      status: 'Pending',
+      dateTime: '2024-03-26 11:30 AM',
+      service: 'Standard',
+      fromAddress: '789 Elm St, Anycity, USA',
+      toAddress: '101 Pine St, Anothercity, USA',
+    },
+    {
+      status: 'Delivered',
+      dateTime: '2024-03-27 1:00 PM',
+      service: 'Express',
+      fromAddress: '222 Maple St, Anystate, USA',
+      toAddress: '333 Birch St, Anotherstate, USA',
+    },
+  ],
+};

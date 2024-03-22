@@ -18,10 +18,10 @@ const Navbar: React.FC = () => {
           toggleDropdown={() => toggleDropdown('Hi, Cookies Kids!')}
           items={userOptions}
           icon={downArrowSolid}
-          labelClassName='relative bg-none font-extrabold'
+          labelClassName='relative bg-none'
           buttonClassName='flex font-light  items-center rounded-md bg-[#eeeeee] text-gray-600 h-[38px]'
           iconBoxClassName='p-1 m-1  '
-          dropdownClassName='absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg text-gray-600'
+          dropdownClassName='absolute right-0 mt-10 z-50 w-48 bg-white border border-gray-300 rounded-md shadow-lg text-gray-600'
           itemClassName='block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100'
         />
         <Dropdown

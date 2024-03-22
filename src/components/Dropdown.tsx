@@ -57,7 +57,7 @@ const Dropdown: React.FC<DropdownProps> = ({
               className={`flex cursor-pointer ${itemClassName} hover:bg-gray-100`}
               onClick={() => handleItemClick(item)}
             >
-              {item.label}
+              <div className={`${item.store && 'font-bold'}`}>{item.label}</div>
               {item.store && <div>: {item.store}</div>}
             </div>
           ))}

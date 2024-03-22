@@ -4,20 +4,24 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import { sideMenuItems } from './consts';
 import Marketplaces from './pages/Marketplaces';
+import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className=' min-h-screen '>
+      <div className='flex flex-col min-h-screen '>
         <Navbar />
-        <div className='flex flex-row'>
+        <div className='flex flex-row flex-1'>
           <Sidebar items={sideMenuItems} />
-          <div className='p-6'>
+          <div className='p-6 flex-1'>
             <Routes>
               <Route path='/' element={''} />
               <Route path='/marketplaces' element={<Marketplaces />} />
             </Routes>
           </div>
+        </div>
+        <div className='flex items-center justify-center h-20'>
+          <Footer />
         </div>
       </div>
     </Router>

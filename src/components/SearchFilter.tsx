@@ -24,7 +24,7 @@ const SearchFilter: React.FC = () => {
     <>
       <div className='w-full gap-2 flex-wrap bg-white shadow-drop rounded-2xl flex items-center p-4 border-b border-gray-200 text-gray-600'>
         <Input
-          labelClassName='p-2'
+          labelClassName='p-2 mr-2'
           label='Keyword Search'
           type='text'
           value={keyword}
@@ -64,7 +64,7 @@ const SearchFilter: React.FC = () => {
             items={mpBulkActions}
             icon={downArrow}
             labelClassName='relative bg-none gap-6'
-            buttonClassName='flex font-light  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[250px] relative shadow-drop'
+            buttonClassName='flex font-light ml-2  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[250px] relative shadow-drop'
             iconBoxClassName='absolute top-0 right-0 bottom-0 rounded-r-md bg-customGray flex items-center justify-center w-[48px]'
             dropdownClassName='absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg text-gray-600'
             itemClassName='block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100'
@@ -74,7 +74,7 @@ const SearchFilter: React.FC = () => {
           />
           <button
             onClick={handleApply}
-            className='shadow-drop  h-[37px] uppercase ml-2 px-4 py-1 text-sm text-white bg-customGray rounded hover:bg-customOrange'
+            className='shadow-drop font-bold  h-[37px] uppercase ml-2 px-4 py-1 text-sm text-white bg-customGray rounded-lg hover:bg-customOrange'
           >
             Apply
           </button>
