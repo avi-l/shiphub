@@ -1,7 +1,7 @@
 // Navbar.tsx
 import React from 'react';
 
-import Dropdown from './Dropdown';
+import Dropdown from './ui/Dropdown';
 import downArrow from '../assets/downArrow.svg';
 import downArrowSolid from '../assets/downArrowSolid.svg';
 import useDropdownState from '../hooks/useDropdownState';

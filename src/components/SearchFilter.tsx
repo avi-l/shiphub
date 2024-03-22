@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Dropdown from './Dropdown';
+import Dropdown from './ui/Dropdown';
 import useDropdownState from '../hooks/useDropdownState';
 import downArrow from '../assets/downArrow.svg';
 import magnifyingGlass from '../assets/magnifyingGlass.svg';
 import calendar from '../assets/calendar.svg';
-import Input from './Input';
+
 import { filterByOptions, mpBulkActions } from '../consts';
+import Input from './ui/Input';
 const SearchFilter: React.FC = () => {
   const { isDropOpen, toggleDropdown } = useDropdownState();
   const [keyword, setKeyword] = useState('');

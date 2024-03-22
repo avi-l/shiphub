@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
-import xIcon from '../assets/x.svg';
-import plusIcon from '../assets/plusWhite.svg';
+import xIcon from '../../assets/x.svg';
+
 interface ModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -20,23 +20,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
         <button onClick={onClose} className='absolute top-0 right-0 p-4'>
           <img src={xIcon} alt='Close' />
         </button>
-
         {children}
-        <div className='flex gap-4 items-center'>
-          <button
-            onClick={onClose}
-            className='shadow-drop font-bold items-center h-[37px] flex
-        uppercase ml-2 px-4 py-1 text-sm text-white bg-customOrange
-         rounded-lg hover:bg-customGray'
-          >
-            {' '}
-            <img src={plusIcon} alt='plus' />
-            <div className='p-2'> ADD NEW MARKETPLACE</div>
-          </button>
-          <span className='underline cursor-pointer text-customGray text-sm'>
-            Need Help?
-          </span>
-        </div>
       </div>
     </div>
   );

@@ -38,7 +38,6 @@ const Dropdown: React.FC<DropdownProps> = ({
 }) => {
   const handleOnClick = (item: Item) => {
     item.action();
-    console.log(item);
     toggleDropdown();
   };
   return (

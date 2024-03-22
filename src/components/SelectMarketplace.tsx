@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { selectMPOptions } from '../consts';
 import downArrow from '../assets/downArrow.svg';
-import Dropdown from './Dropdown';
+import Dropdown from './ui/Dropdown';
 import useDropdownState from '../hooks/useDropdownState';
 import refreshIcon from '../assets/refresh.svg';
 import plusIcon from '../assets/plus.svg';
-import Modal from './Modal';
+import NewMPModal from './NewMPModal';
 
 const SelectMarketplace: React.FC = () => {
   const { isDropOpen, toggleDropdown } = useDropdownState();
@@ -24,18 +24,10 @@ const SelectMarketplace: React.FC = () => {
     <>
       {' '}
       {isModalOpen && (
-        <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-          <div className='max-w-[711px] text-sm p-4'>
-            <div className='text-customOrange font-bold text-lg mb-6'>
-              CONNECT A MARKETPLACE
-            </div>{' '}
-            <div className=' mb-6'>
-              is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry’s standard dummy text ever since
-              the 1500s,
-            </div>
-          </div>
-        </Modal>
+        <NewMPModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       )}
       <div className='w-full gap-2 flex-wrap bg-white shadow-drop rounded-2xl flex items-center p-4 border-b border-gray-200 text-gray-600'>
         <Dropdown
