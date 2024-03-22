@@ -147,17 +147,17 @@ export const userOptions = [
 ];
 export const selectMPOptions = [
   {
-    label: 'Platform',
+    label: <div className='font-bold'>Platform</div>,
     store: 'Store name',
     action: () => {},
   },
   {
-    label: 'Shopify',
+    label: <div className='font-bold'>Shopify</div>,
     store: 'Cookies Store',
     action: () => {},
   },
   {
-    label: 'Shipstation',
+    label: <div className='font-bold '>Shipstation</div>,
     store: 'Cookie Monster',
     action: () => {},
   },

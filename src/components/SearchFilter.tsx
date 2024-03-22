@@ -9,15 +9,12 @@ import { filterByOptions, mpBulkActions } from '../consts';
 const SearchFilter: React.FC = () => {
   const { isDropOpen, toggleDropdown } = useDropdownState();
   const [keyword, setKeyword] = useState('');
-  const [filterBy, setFilterBy] = useState('All');
+
   const [selectedDate, setSelectedDate] = useState('');
-  const [bulkAction, setBulkAction] = useState('Create Labels');
 
   const handleApply = () => {
     console.log('Keyword:', keyword);
-    console.log('Filter By:', filterBy);
     console.log('Selected Date:', selectedDate);
-    console.log('Bulk Action:', bulkAction);
   };
 
   return (
@@ -44,7 +41,6 @@ const SearchFilter: React.FC = () => {
           iconBoxClassName='cursor-pointer absolute right-0 flex items-center rounded-r-md bg-customGray flex items-center justify-center w-[48px] h-[38px]'
           dropdownClassName=' absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg'
           itemClassName='block px-4 py-2 text-sm hover:bg-gray-100'
-          onChange={(value) => setFilterBy(value)}
           isOpen={isDropOpen === 'Ship Date (from-to)'}
           toggleDropdown={() => toggleDropdown('Ship Date (from-to)')}
         />
@@ -68,7 +64,6 @@ const SearchFilter: React.FC = () => {
             iconBoxClassName='absolute top-0 right-0 bottom-0 rounded-r-md bg-customGray flex items-center justify-center w-[48px]'
             dropdownClassName='absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg text-gray-600'
             itemClassName='block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100'
-            onChange={(value) => setBulkAction(value)}
             isOpen={isDropOpen === 'Bulk Actions'}
             toggleDropdown={() => toggleDropdown('Bulk Actions')}
           />

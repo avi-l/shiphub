@@ -1,14 +1,17 @@
 // Dropdown.tsx
 import React from 'react';
 
+interface Item {
+  label: string | JSX.Element;
+  store?: string | JSX.Element;
+  action: () => void;
+  icon?: string | JSX.Element;
+}
+
 interface DropdownProps {
-  label?: string;
-  items: {
-    label: string;
-    store?: string;
-    action: () => void;
-  }[];
-  defaultValue: string;
+  label?: string | JSX.Element;
+  items: Item[];
+  defaultValue: string | JSX.Element;
   labelClassName?: string;
   buttonClassName?: string;
   dropdownClassName?: string;
@@ -17,7 +20,7 @@ interface DropdownProps {
   icon?: string;
   isOpen: boolean;
   toggleDropdown: () => void;
-  onChange?: (value: string) => void;
+  onChange?: (value: string | JSX.Element) => void;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -32,11 +35,11 @@ const Dropdown: React.FC<DropdownProps> = ({
   icon,
   isOpen,
   toggleDropdown,
-  onChange,
 }) => {
-  const handleItemClick = (item: { label: string; action: () => void }) => {
-    onChange && onChange(item.label);
+  const handleOnClick = (item: Item) => {
     item.action();
+    console.log(item);
+    toggleDropdown();
   };
   return (
     <div className={`flex ${labelClassName}`}>
@@ -55,10 +58,11 @@ const Dropdown: React.FC<DropdownProps> = ({
             <div
               key={index}
               className={`flex cursor-pointer ${itemClassName} hover:bg-gray-100`}
-              onClick={() => handleItemClick(item)}
+              onClick={() => handleOnClick(item)}
             >
-              <div className={`${item.store && 'font-bold'}`}>{item.label}</div>
-              {item.store && <div>: {item.store}</div>}
+              {item.icon && item.icon}
+              {item.label}
+              {item.store && <>: {item.store}</>}
             </div>
           ))}
         </div>
