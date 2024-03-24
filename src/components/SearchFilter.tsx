@@ -5,7 +5,7 @@ import downArrow from '../assets/downArrow.svg';
 import magnifyingGlass from '../assets/magnifyingGlass.svg';
 import calendar from '../assets/calendar.svg';
 
-import { filterByOptions, mpBulkActions } from '../consts';
+import { FILTER_OPTIONS, MP_BULK_ACTIONS } from '../consts';
 import Input from './ui/Input';
 const SearchFilter: React.FC = () => {
   const { isDropOpen, toggleDropdown } = useDropdownState();
@@ -35,7 +35,7 @@ const SearchFilter: React.FC = () => {
         <Dropdown
           label='Filter By'
           defaultValue='Ship Date (from-to)'
-          items={filterByOptions}
+          items={FILTER_OPTIONS}
           labelClassName='relative bg-none'
           icon={downArrow}
           buttonClassName='flex font-light  items-center px-4 py-2 rounded-md bg-white border border-gray-300 h-[38px] w-[250px] relative shadow-drop'
@@ -45,20 +45,23 @@ const SearchFilter: React.FC = () => {
           isOpen={isDropOpen === 'Ship Date (from-to)'}
           toggleDropdown={() => toggleDropdown('Ship Date (from-to)')}
         />
+
         <Input
-          labelClassName='p-2'
+          labelClassName='p-2 '
           type='date'
           value={selectedDate}
           onChange={(e) => setSelectedDate(e)}
-          inputClassName='relative bg-white shadow-drop h-[36px] rounded-md px-2 mr-2 text-sm  text-gray-600 focus:outline-none focus:border-gray-500'
+          inputClassName='cursor-pointer relative bg-white shadow-drop h-[36px] rounded-md px-2 mr-2 text-sm  text-gray-600 focus:outline-none focus:border-gray-500'
           icon={calendar}
-          iconBoxClassName='absolute right-0 flex items-center rounded-r-md  flex items-center justify-center w-[48px] '
+          iconBoxClassName='cursor-pointer absolute right-0 flex items-center 
+          rounded-r-md  flex items-center justify-center w-[48px] '
         />
+
         <div className='flex flex-wrap '>
           <Dropdown
             label='Bulk Actions'
             defaultValue='Create Labels'
-            items={mpBulkActions}
+            items={MP_BULK_ACTIONS}
             icon={downArrow}
             labelClassName='relative bg-none gap-6'
             buttonClassName='flex font-light ml-2  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[250px] relative shadow-drop'

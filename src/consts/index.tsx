@@ -1,4 +1,4 @@
-export const sideMenuItems = [
+export const SIDE_MENU_ITEMS = [
   {
     label: 'SHIP',
     path: '',
@@ -53,7 +53,7 @@ export const sideMenuItems = [
   },
 ];
 
-export const mpBulkActions = [
+export const MP_BULK_ACTIONS = [
   {
     label: 'Create Labels',
     action: () => {},
@@ -87,7 +87,7 @@ export const mpBulkActions = [
     action: () => {},
   },
 ];
-export const filterByOptions = [
+export const FILTER_OPTIONS = [
   {
     label: 'Ship Date (from-to)',
     action: () => {},
@@ -102,7 +102,7 @@ export const filterByOptions = [
   },
 ];
 
-export const customersOptions = [
+export const CUSTOMERS_OPTIONS = [
   {
     label: 'Customers',
     action: () => {},
@@ -117,7 +117,7 @@ export const customersOptions = [
   },
 ];
 
-export const billingEntityOptions = [
+export const BILLING_ENTITY_OPTIONS = [
   {
     label: 'Billing Entity',
     action: () => {},
@@ -131,7 +131,7 @@ export const billingEntityOptions = [
     action: () => {},
   },
 ];
-export const userOptions = [
+export const USER_OPTIONS = [
   {
     label: 'Name',
     action: () => {},
@@ -145,7 +145,7 @@ export const userOptions = [
     action: () => {},
   },
 ];
-export const selectMPOptions = [
+export const SELECT_MP_PTIONS = [
   {
     label: <div className='font-bold'>Platform</div>,
     store: 'Store name',
@@ -162,37 +162,437 @@ export const selectMPOptions = [
     action: () => {},
   },
 ];
-
-export const mpTableData = {
+import dhlSvg from '../assets/dhl.svg';
+import filesSvg from '../assets/files.svg';
+export const MP_TABLE_DATA = {
   headings: [
-    'STATUS/ORDER#',
+    'STATUS/ ORDER#',
     'DATE/TIME',
     'SERVICE/TRACKING/QUOTE',
     'FROM ADDRESS',
     'TO ADDRESS',
   ],
   rowNames: ['status', 'dateTime', 'service', 'fromAddress', 'toAddress'],
-  data: [
+  orders: [
     {
-      status: 'Shipped',
-      dateTime: '2024-03-25 10:00 AM',
-      service: 'Express',
-      fromAddress: '123 Main St, Anytown, USA',
-      toAddress: '456 Oak St, Othertown, USA',
+      status: {
+        selected: false,
+        status: 'LABEL ISSUED',
+        badgeColor: 'yellow',
+        orderNum: '#4455994',
+        orderOpts: [
+          {
+            label: 'Print Label',
+            handler: 'printLabelHandler',
+          },
+          {
+            label: 'Schedule a Pickup',
+            handler: 'schedulePickupHandler',
+          },
+          {
+            label: 'Void Label',
+            handler: 'voidLabelHandler',
+          },
+        ],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
     },
     {
-      status: 'Pending',
-      dateTime: '2024-03-26 11:30 AM',
-      service: 'Standard',
-      fromAddress: '789 Elm St, Anycity, USA',
-      toAddress: '101 Pine St, Anothercity, USA',
+      status: {
+        selected: false,
+        status: 'DELIVERED',
+        badgeColor: 'green',
+        orderNum: '#4455994',
+        orderOpts: [],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
     },
     {
-      status: 'Delivered',
-      dateTime: '2024-03-27 1:00 PM',
-      service: 'Express',
-      fromAddress: '222 Maple St, Anystate, USA',
-      toAddress: '333 Birch St, Anotherstate, USA',
+      status: {
+        selected: false,
+        status: 'UNFULFILLED',
+        badgeColor: 'blue',
+        orderNum: '#4455994',
+        orderOpts: [
+          {
+            label: 'Edit order info',
+            handler: 'editOrderInfo',
+          },
+          {
+            label: 'Create Lable',
+            handler: 'createLabel',
+          },
+        ],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
+    },
+    {
+      status: {
+        selected: false,
+        status: 'CANCELLED',
+        badgeColor: 'white',
+        orderNum: '#4455994',
+        orderOpts: [
+          {
+            label: 'Edit order info',
+            handler: 'editOrderInfo',
+          },
+          {
+            label: 'Schedule a Pickup',
+            handler: 'schedulePickupHandler',
+          },
+          {
+            label: 'Void Label',
+            handler: 'voidLabelHandler',
+          },
+        ],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
+    },
+    {
+      status: {
+        selected: false,
+        status: 'ERROR',
+        badgeColor: 'red',
+        orderNum: '#4455994',
+        orderOpts: [
+          {
+            label: 'Fix Error',
+            handler: 'fixError',
+          },
+        ],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
+    },
+    {
+      status: {
+        selected: false,
+        status: 'LABEL ISSUED',
+        badgeColor: 'yellow',
+        orderNum: '#4455994',
+        orderOpts: [
+          {
+            label: 'Print Label',
+            handler: 'printLabelHandler',
+          },
+          {
+            label: 'Schedule a Pickup',
+            handler: 'schedulePickupHandler',
+          },
+          {
+            label: 'Void Label',
+            handler: 'voidLabelHandler',
+          },
+        ],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
+    },
+    {
+      status: {
+        selected: false,
+        status: 'FULFILLED EXTERNALLY',
+        badgeColor: 'green',
+        orderNum: '#4455994',
+        orderOpts: [],
+      },
+      dateTime: {
+        date: '02/20/2023',
+        time: '13:45',
+      },
+      service: {
+        icon: dhlSvg,
+        type: 'Express Worldwide',
+        numPkgs: 1,
+        tracking: '#344ddfg',
+        fileIcon: filesSvg,
+        estimate: '$15.09',
+        details: {
+          ref1: '#85767685',
+          ref2: '#85767686',
+          zone: 8,
+          user: 'Adina Pinsker',
+          submittedBy: 'Malkie',
+          tracking: 3355566777,
+          service: 'FedEx International Priority',
+          estDelivery: '04/04/2023 16:30',
+          transFee: '$110.09',
+          carrierFee: '$21.60',
+          fuelSurcharge: '$15.41',
+          total: '$147.33',
+        },
+      },
+
+      fromAddress: {
+        name: 'Main Street Shopper',
+        street: '1385 Broadway',
+        town: 'New York',
+        state: 'NY',
+        zip: '10018',
+        country: 'US',
+      },
+      toAddress: {
+        name: 'Sandra Romm',
+        street: '6816 Chippewa Dr.',
+        town: 'Baltimore',
+        state: 'Maryland',
+        zip: '334433',
+        country: 'US',
+      },
     },
   ],
 };
+
+export const DUMMY_TEXT =
+  'is simply dummy text of the printing and typesetting industry. Lorem Ipsum has  been the industry’s standard dummy text ever since the 1500s, ';

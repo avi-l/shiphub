@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { selectMPOptions } from '../consts';
+import { SELECT_MP_PTIONS } from '../consts';
 import downArrow from '../assets/downArrow.svg';
 import Dropdown from './ui/Dropdown';
 import useDropdownState from '../hooks/useDropdownState';
@@ -33,7 +33,7 @@ const SelectMarketplace: React.FC = () => {
         <Dropdown
           label='Select a Marketplace'
           defaultValue={`Shopify- Cookies Store`}
-          items={[...selectMPOptions, ...addNewMP]}
+          items={[...SELECT_MP_PTIONS, ...addNewMP]}
           labelClassName='relative bg-none'
           icon={downArrow}
           buttonClassName='flex font-light ml-2 items-center px-4 py-2 rounded-md bg-white border border-gray-300 h-[38px] w-[250px] relative shadow-drop'

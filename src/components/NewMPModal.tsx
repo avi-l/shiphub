@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from './ui/Modal';
 import plusIcon from '../assets/plusWhite.svg';
+import { DUMMY_TEXT } from '../consts';
 interface NewMPModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -12,11 +13,7 @@ const NewMPModal: React.FC<NewMPModalProps> = ({ isOpen, onClose }) => {
         <div className='text-customOrange font-bold text-lg mb-6'>
           CONNECT A MARKETPLACE
         </div>{' '}
-        <div className=' mb-6'>
-          is simply dummy text of the printing and typesetting industry. Lorem
-          Ipsum has been the industry’s standard dummy text ever since the
-          1500s,
-        </div>
+        <div className=' mb-6'>{DUMMY_TEXT}</div>
         <div className='flex gap-4 items-center'>
           <button
             onClick={onClose}

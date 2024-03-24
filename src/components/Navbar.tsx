@@ -5,7 +5,11 @@ import Dropdown from './ui/Dropdown';
 import downArrow from '../assets/downArrow.svg';
 import downArrowSolid from '../assets/downArrowSolid.svg';
 import useDropdownState from '../hooks/useDropdownState';
-import { billingEntityOptions, customersOptions, userOptions } from '../consts';
+import {
+  BILLING_ENTITY_OPTIONS,
+  CUSTOMERS_OPTIONS,
+  USER_OPTIONS,
+} from '../consts';
 const Navbar: React.FC = () => {
   const { isDropOpen, toggleDropdown } = useDropdownState();
   return (
@@ -16,7 +20,7 @@ const Navbar: React.FC = () => {
           defaultValue='Hi, Cookies Kids!'
           isOpen={isDropOpen === 'Hi, Cookies Kids!'}
           toggleDropdown={() => toggleDropdown('Hi, Cookies Kids!')}
-          items={userOptions}
+          items={USER_OPTIONS}
           icon={downArrowSolid}
           labelClassName='relative bg-none'
           buttonClassName='flex font-light  items-center rounded-md bg-[#eeeeee] text-gray-600 h-[38px]'
@@ -28,7 +32,7 @@ const Navbar: React.FC = () => {
           defaultValue='Customers'
           isOpen={isDropOpen === 'Customers'}
           toggleDropdown={() => toggleDropdown('Customers')}
-          items={customersOptions}
+          items={CUSTOMERS_OPTIONS}
           labelClassName='relative'
           icon={downArrow}
           buttonClassName='flex font-light  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[292px] relative shadow-drop'
@@ -40,7 +44,7 @@ const Navbar: React.FC = () => {
           defaultValue='Billing Entity'
           isOpen={isDropOpen === 'Billing Entity'}
           toggleDropdown={() => toggleDropdown('Billing Entity')}
-          items={billingEntityOptions}
+          items={BILLING_ENTITY_OPTIONS}
           labelClassName='relative'
           icon={downArrow}
           buttonClassName='flex font-light  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[292px] relative shadow-drop'

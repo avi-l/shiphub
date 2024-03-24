@@ -2,7 +2,7 @@ import React from 'react';
 import SearchFilter from '../components/SearchFilter';
 import SelectMarketplace from '../components/SelectMarketplace';
 import OrdersTable from '../components/OrdersTable';
-import { mpTableData } from '../consts';
+import { MP_TABLE_DATA } from '../consts';
 
 const Marketplaces: React.FC = () => {
   return (
@@ -14,9 +14,9 @@ const Marketplaces: React.FC = () => {
         <SelectMarketplace />
         <SearchFilter />
         <OrdersTable
-          headings={mpTableData.headings}
-          rowNames={mpTableData.rowNames}
-          data={mpTableData.data}
+          headings={MP_TABLE_DATA.headings}
+          rowNames={MP_TABLE_DATA.rowNames}
+          orders={MP_TABLE_DATA.orders}
         />
       </div>
     </>

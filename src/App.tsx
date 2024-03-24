@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import { sideMenuItems } from './consts';
+import { SIDE_MENU_ITEMS } from './consts';
 import Marketplaces from './pages/Marketplaces';
 import Footer from './components/Footer';
 
@@ -12,7 +12,7 @@ const App: React.FC = () => {
       <div className='flex flex-col min-h-screen '>
         <Navbar />
         <div className='flex flex-row flex-1'>
-          <Sidebar items={sideMenuItems} />
+          <Sidebar items={SIDE_MENU_ITEMS} />
           <div className='p-6 flex-1'>
             <Routes>
               <Route path='/' element={''} />
