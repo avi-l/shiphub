@@ -30,7 +30,7 @@ const SearchFilter: React.FC = () => {
           placeholder='Type Keyword or #'
           inputClassName='bg-white shadow-drop h-[38px] rounded-md px-2 mr-2 text-sm border border-gray-200 w-[310px] text-gray-600 focus:outline-none focus:border-gray-500'
           icon={magnifyingGlass}
-          iconBoxClassName='cursor-pointer absolute right-0 flex items-center rounded-r-md bg-customGray flex items-center justify-center w-[48px] h-[38px]'
+          iconBoxClassName='hover:bg-customOrange cursor-pointer absolute right-0 flex items-center rounded-r-md bg-customGray flex items-center justify-center w-[48px] h-[38px]'
         />
         <Dropdown
           label='Filter By'
@@ -39,7 +39,7 @@ const SearchFilter: React.FC = () => {
           labelClassName='relative bg-none'
           icon={downArrow}
           buttonClassName='flex font-light  items-center px-4 py-2 rounded-md bg-white border border-gray-300 h-[38px] w-[250px] relative shadow-drop'
-          iconBoxClassName='cursor-pointer absolute right-0 flex items-center rounded-r-md bg-customGray flex items-center justify-center w-[48px] h-[38px]'
+          iconBoxClassName='hover:bg-customOrange cursor-pointer absolute right-0 flex items-center rounded-r-md bg-customGray flex items-center justify-center w-[48px] h-[38px]'
           dropdownClassName=' absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg'
           itemClassName='block px-4 py-2 text-sm hover:bg-gray-100'
           isOpen={isDropOpen === 'Ship Date (from-to)'}
@@ -65,7 +65,7 @@ const SearchFilter: React.FC = () => {
             icon={downArrow}
             labelClassName='relative bg-none gap-6'
             buttonClassName='flex font-light ml-2  items-center px-4 py-2 rounded-md bg-white border border-gray-300 text-gray-600 h-[38px] w-[250px] relative shadow-drop'
-            iconBoxClassName='absolute top-0 right-0 bottom-0 rounded-r-md bg-customGray flex items-center justify-center w-[48px]'
+            iconBoxClassName='hover:bg-customOrange absolute top-0 right-0 bottom-0 rounded-r-md bg-customGray flex items-center justify-center w-[48px]'
             dropdownClassName='absolute right-0 mt-10 z-50  w-48 bg-white border border-gray-300 rounded-md shadow-lg text-gray-600'
             itemClassName='block px-4 py-2 text-sm text-gray-600 hover:bg-gray-100'
             isOpen={isDropOpen === 'Bulk Actions'}

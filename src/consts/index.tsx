@@ -164,6 +164,7 @@ export const SELECT_MP_PTIONS = [
 ];
 import dhlSvg from '../assets/dhl.svg';
 import filesSvg from '../assets/files.svg';
+import { COLORS } from '../types';
 export const MP_TABLE_DATA = {
   headings: [
     'STATUS/ ORDER#',
@@ -178,7 +179,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'LABEL ISSUED',
-        badgeColor: 'yellow',
+        badgeColor: COLORS.Yellow,
         orderNum: '#4455994',
         orderOpts: [
           {
@@ -243,7 +244,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'DELIVERED',
-        badgeColor: 'green',
+        badgeColor: COLORS.Green,
         orderNum: '#4455994',
         orderOpts: [],
       },
@@ -295,7 +296,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'UNFULFILLED',
-        badgeColor: 'blue',
+        badgeColor: COLORS.Blue,
         orderNum: '#4455994',
         orderOpts: [
           {
@@ -356,7 +357,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'CANCELLED',
-        badgeColor: 'white',
+        badgeColor: COLORS.Gray,
         orderNum: '#4455994',
         orderOpts: [
           {
@@ -421,7 +422,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'ERROR',
-        badgeColor: 'red',
+        badgeColor: COLORS.Red,
         orderNum: '#4455994',
         orderOpts: [
           {
@@ -478,7 +479,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'LABEL ISSUED',
-        badgeColor: 'yellow',
+        badgeColor: COLORS.Yellow,
         orderNum: '#4455994',
         orderOpts: [
           {
@@ -543,7 +544,7 @@ export const MP_TABLE_DATA = {
       status: {
         selected: false,
         status: 'FULFILLED EXTERNALLY',
-        badgeColor: 'green',
+        badgeColor: COLORS.Green,
         orderNum: '#4455994',
         orderOpts: [],
       },
