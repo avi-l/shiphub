@@ -31,16 +31,16 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
   if (!orders) return null;
   return (
     <>
-      <table className='text-sm'>
+      <table className='text-sm shadow-drop rounded-2xl overflow-hidden  '>
         <tbody className=''>
           <tr className='text-customGray align-top items-center text-center '>
-            <th className='  flex justify-center items-center'>
+            <th className=' flex justify-center items-center '>
               <td className=''>
                 <div className='justify-center '>SELECT</div>
                 <div>
                   <input
                     type='checkbox'
-                    className='mt-2 w-4 h-4 mb-2 '
+                    className='mt-2 w-4 h-4 mb-2 accent-customOrange'
                     checked={selectAll}
                     onChange={toggleSelectAll}
                   />
@@ -48,7 +48,7 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
               </td>
             </th>
             {headings.map((heading, index) => (
-              <th key={index} className='text-left pl-2'>
+              <th key={index} className='text-left   pl-2 '>
                 {heading}
               </th>
             ))}
@@ -57,20 +57,20 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
         {/* </table>
 
       <table className='shadow-drop rounded-2xl text-sm overflow-hidden'> */}
-        <tbody className=''>
+        <tbody>
           {orders.map((order, index) => (
             <tr
               key={index}
               className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}
          
-                text-customGray `}
+                text-customGray`}
             >
               {' '}
               <div className=' align-middle  flex justify-center items-center  h-[100px] '>
                 <td className='p-4 '>
                   <input
                     type='checkbox'
-                    className='w-4 h-4 align-middle'
+                    className='w-4 h-4 align-middle accent-customOrange'
                     checked={selectedRows.includes(index)}
                     onChange={() => toggleSelectRow(index)}
                   />
