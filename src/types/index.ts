@@ -1,15 +1,11 @@
-export enum COLORS {
-  Red = 'red',
-  Blue = 'blue',
-  Yellow = 'yellow',
-  Green = 'green',
-  White = 'white',
-  Orange = 'orange',
-  Indigo = 'indigo',
-  Purple = 'purple',
-  Pink = 'pink',
-  Gray = 'gray',
-}
+export type COLORS =
+  | 'red'
+  | 'yellow'
+  | 'green'
+  | 'blue'
+  | 'indigo'
+  | 'purple'
+  | 'pink';
 
 export interface OrderOption {
   label: string;

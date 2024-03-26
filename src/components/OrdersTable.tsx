@@ -39,7 +39,7 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
                 <span className=' '>SELECT</span>
                 <input
                   type='checkbox'
-                  className='mt-1'
+                  className='mt-1 w-4 h-4 bg-white'
                   checked={selectAll}
                   onChange={toggleSelectAll}
                 />
@@ -52,9 +52,9 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
             ))}
           </tr>
         </thead>
-      </table>
+        {/* </table>
 
-      <table className='shadow-drop rounded-2xl text-sm overflow-hidden'>
+      <table className='shadow-drop rounded-2xl text-sm overflow-hidden'> */}
         <tbody>
           {orders.map((order, index) => (
             <tr
@@ -67,7 +67,7 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
                 <div className='flex flex-col items-center'>
                   <input
                     type='checkbox'
-                    className=' ml-3'
+                    className=' ml-3 w-4 h-4'
                     checked={selectedRows.includes(index)}
                     onChange={() => toggleSelectRow(index)}
                   />
