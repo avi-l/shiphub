@@ -164,9 +164,8 @@ export const SELECT_MP_PTIONS = [
 ];
 import dhlSvg from '../assets/dhl.svg';
 import filesSvg from '../assets/files.svg';
-import { ColorClasses } from '../types';
 
-export const colorClasses: ColorClasses = {
+export const colorClasses = {
   gray: 'bg-gray-50 text-gray-600 ring-gray-500/10',
   red: 'bg-red-50 text-red-700 ring-red-600/10',
   yellow: 'bg-yellow-50 text-yellow-800 ring-yellow-600/20',

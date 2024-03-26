@@ -1,5 +1,5 @@
 export interface ColorClasses {
-  gray: string;
+  gray: 'string';
   red: string;
   yellow: string;
   green: string;
