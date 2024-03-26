@@ -32,59 +32,64 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
   return (
     <>
       <table className='text-sm'>
-        <thead className='w-full '>
-          <tr className='text-customGray '>
-            <th className='flex justify-center items-center h-20 pt-[18px]'>
-              <div className='flex flex-col items-center'>
-                <span className=' '>SELECT</span>
-                <input
-                  type='checkbox'
-                  className='mt-1 w-4 h-4 bg-white'
-                  checked={selectAll}
-                  onChange={toggleSelectAll}
-                />
-              </div>
+        <tbody className=''>
+          <tr className='text-customGray align-top items-center text-center '>
+            <th className='  flex justify-center items-center'>
+              <td className=''>
+                <div className='justify-center '>SELECT</div>
+                <div>
+                  <input
+                    type='checkbox'
+                    className='mt-2 w-4 h-4 mb-2 '
+                    checked={selectAll}
+                    onChange={toggleSelectAll}
+                  />
+                </div>
+              </td>
             </th>
             {headings.map((heading, index) => (
-              <th key={index} className='text-left'>
+              <th key={index} className='text-left pl-2'>
                 {heading}
               </th>
             ))}
           </tr>
-        </thead>
+        </tbody>
         {/* </table>
 
       <table className='shadow-drop rounded-2xl text-sm overflow-hidden'> */}
-        <tbody>
+        <tbody className=''>
           {orders.map((order, index) => (
             <tr
               key={index}
-              className={`${
-                index % 2 === 0 ? 'bg-white' : 'bg-gray-100'
-              } text-customGray`}
+              className={`${index % 2 === 0 ? 'bg-white' : 'bg-gray-100'}
+         
+                text-customGray `}
             >
-              <td className='p-4 flex text-center flex-col justify-center items-center'>
-                <div className='flex flex-col items-center'>
+              {' '}
+              <div className=' align-middle  flex justify-center items-center  h-[100px] '>
+                <td className='p-4 '>
                   <input
                     type='checkbox'
-                    className=' ml-3 w-4 h-4'
+                    className='w-4 h-4 align-middle'
                     checked={selectedRows.includes(index)}
                     onChange={() => toggleSelectRow(index)}
                   />
-                </div>
-              </td>
+                </td>
+              </div>
               {rowNames.map((rowName, rowIndex) => (
-                <td key={rowIndex} className='p-2'>
+                <td key={rowIndex} className='p-2 align-top '>
                   {rowName === 'status' ? (
                     <div>
                       <Badge
                         color={order.status.badgeColor}
                         text={order.status.status}
                       />
-                      <p>Order: {order.status.orderNum}</p>
+                      <p className='mb-1 mt-1'>
+                        Order: {order.status.orderNum}
+                      </p>
                       <ul>
                         {order.status.orderOpts.map((opt, optIndex) => (
-                          <li key={optIndex}>
+                          <li key={optIndex} className='mb-1'>
                             <button onClick={() => console.log(opt.handler)}>
                               <span className='underline'>{opt.label}</span>
                             </button>
@@ -93,13 +98,13 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
                       </ul>
                     </div>
                   ) : rowName === 'dateTime' ? (
-                    <>
+                    <div>
                       <p>{`${order.dateTime.date}`}</p>
                       <p>{`${order.dateTime.time}`}</p>
-                    </>
+                    </div>
                   ) : rowName === 'service' ? (
                     <div>
-                      <span className='flex items-center'>
+                      <span className='flex items-center '>
                         <img
                           src={order.service.icon}
                           alt='Service Icon'
@@ -107,10 +112,10 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
                         />
                         <span className='mt-1'>{order.service.type}</span>
                       </span>
-                      <p>{`${order.service.numPkgs} package`}</p>
+                      <p className='mb-1'>{`${order.service.numPkgs} package`}</p>
                       <span className='flex  gap-2'>
-                        <span className='font-bold'>Tracking: </span>
-                        <span className='underline'>
+                        <span className='font-bold mb-1'>Tracking: </span>
+                        <span className='underline mb-1'>
                           {order.service.tracking}
                         </span>
 
@@ -135,10 +140,13 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
                     </div>
                   ) : rowName === 'fromAddress' || rowName === 'toAddress' ? (
                     <>
-                      <p className='font-bold'>{order[rowName].name}</p>
-                      <p>{order[rowName].street}</p>
-                      <p>{order[rowName].town}</p>
-                      <p> {order[rowName].country}</p>
+                      <p className='font-bold mb-1'>{order[rowName].name}</p>
+                      <p className='mb-1'>{order[rowName].street}</p>
+                      <p className='mb-1'>
+                        {order[rowName].town}, {order[rowName].state}{' '}
+                        {order[rowName].zip}
+                      </p>
+                      <p className='mb-1'>{order[rowName].country}</p>
                     </>
                   ) : (
                     ''

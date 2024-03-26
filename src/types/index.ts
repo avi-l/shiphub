@@ -1,14 +1,3 @@
-// export interface ColorClasses {
-//   gray: 'string';
-//   red: string;
-//   yellow: string;
-//   green: string;
-//   blue: string;
-//   indigo: string;
-//   purple: string;
-//   pink: string;
-// }
-
 export interface OrderOption {
   label: string;
   handler: string;

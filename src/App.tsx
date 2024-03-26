@@ -15,7 +15,7 @@ const App: React.FC = () => {
           <Sidebar items={SIDE_MENU_ITEMS} />
           <div className='p-6 flex-1'>
             <Routes>
-              <Route path='/' element={''} />
+              <Route path='/' element={<Marketplaces />} />
               <Route path='/marketplaces' element={<Marketplaces />} />
             </Routes>
           </div>

@@ -165,7 +165,7 @@ export const SELECT_MP_PTIONS = [
 import dhlSvg from '../assets/dhl.svg';
 import filesSvg from '../assets/files.svg';
 
-export const colorClasses = (color: string) => {
+export const badgeColorClasses = (color: string) => {
   switch (color) {
     case 'gray':
       return 'bg-gray-50 text-gray-600 ring-gray-500/10';
