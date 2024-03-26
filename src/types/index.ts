@@ -1,11 +1,13 @@
-export type COLORS =
-  | 'red'
-  | 'yellow'
-  | 'green'
-  | 'blue'
-  | 'indigo'
-  | 'purple'
-  | 'pink';
+export interface ColorClasses {
+  gray: string;
+  red: string;
+  yellow: string;
+  green: string;
+  blue: string;
+  indigo: string;
+  purple: string;
+  pink: string;
+}
 
 export interface OrderOption {
   label: string;
@@ -31,7 +33,7 @@ export interface Order {
   status: {
     selected: boolean;
     status: string;
-    badgeColor: COLORS;
+    badgeColor: keyof ColorClasses;
     orderNum: string;
     orderOpts: OrderOption[];
   };
