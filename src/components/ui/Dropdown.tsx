@@ -41,9 +41,9 @@ const Dropdown: React.FC<DropdownProps> = ({
     toggleDropdown();
   };
   return (
-    <div className={`flex ${labelClassName}`}>
+    <div className={`flex  ${labelClassName} `}>
       {label && <div className='p-2 '>{label}</div>}
-      <button className={buttonClassName} onClick={toggleDropdown}>
+      <button className={` ${buttonClassName}`} onClick={toggleDropdown}>
         {defaultValue}
         {icon && (
           <div className={iconBoxClassName}>
@@ -52,7 +52,7 @@ const Dropdown: React.FC<DropdownProps> = ({
         )}
       </button>
       {isOpen && (
-        <div className={dropdownClassName}>
+        <div className={`absolute ${dropdownClassName}`}>
           {items.map((item, index) => (
             <div
               key={index}

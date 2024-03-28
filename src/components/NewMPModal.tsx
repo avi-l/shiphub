@@ -2,10 +2,12 @@ import React from 'react';
 import Modal from './ui/Modal';
 import plusIcon from '../assets/plusWhite.svg';
 import { DUMMY_TEXT } from '../consts';
+
 interface NewMPModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
+
 const NewMPModal: React.FC<NewMPModalProps> = ({ isOpen, onClose }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose}>

@@ -14,7 +14,11 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   };
 
   return (
-    <div className='bg-white text-[13px] font-medium w-40 justify-start items-start h-screen border-r border-gray-300 rounded-r-2xl shadow-drop'>
+    <div
+      className='bg-white text-[13px] mt-2 font-medium w-40 justify-start 
+    items-start h-screen border-r border-gray-300 
+    rounded-2xl shadow-drop'
+    >
       {items.map((item, index) => (
         <div
           key={index}
