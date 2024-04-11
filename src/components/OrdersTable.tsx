@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Popover } from 'react-tiny-popover';
 import Badge from './ui/Badge';
 import { MP_TABLE_DATA } from '../types';
@@ -12,14 +12,15 @@ const OrdersTable: React.FC<MP_TABLE_DATA> = ({
   const [selectedRows, setSelectedRows] = useState<number[]>([]);
   const [selectedPopover, setSelectedPopover] = useState<number[]>([]);
 
-  const toggleSelectAll = () => {
-    setSelectAll((prev) => !prev);
-    if (selectAll) {
+  useEffect(() => {
+    if (!selectAll) {
       setSelectedRows([]);
     } else {
       setSelectedRows(orders.map((_, index) => index));
     }
-  };
+  }, [orders, selectAll]);
+
+  const toggleSelectAll = () => setSelectAll((prev) => !prev);
 
   const toggleSelectRow = (rowIndex: number) => {
     if (selectedRows.includes(rowIndex)) {

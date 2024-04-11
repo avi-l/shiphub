@@ -54,7 +54,8 @@ const SearchFilter: React.FC = () => {
           type='date'
           value={selectedDate}
           onChange={(e) => setSelectedDate(e)}
-          inputClassName='cursor-pointer relative bg-white shadow-input h-[36px] rounded-md px-2 mr-2 text-sm  text-gray-600 focus:outline-none focus:border-gray-500'
+          inputClassName='cursor-pointer relative bg-white shadow-input h-[36px]
+           rounded-md px-2 mr-2 text-sm  text-gray-600 focus:outline-none focus:border-gray-500'
           icon={calendar}
           iconBoxClassName='cursor-pointer absolute right-0 flex items-center 
           rounded-r-md  flex items-center justify-center w-[48px] '
